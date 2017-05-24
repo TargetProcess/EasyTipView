@@ -25,6 +25,7 @@ import UIKit
 
 public protocol EasyTipViewDelegate : class {
     func easyTipViewDidDismiss(_ tipView : EasyTipView)
+    func didTap(onTipView tipView: EasyTipView)
 }
 
 
@@ -419,6 +420,7 @@ open class EasyTipView: UIView {
     // MARK:- Callbacks -
     
     func handleTap() {
+        delegate?.didTap(onTipView: self)
         dismiss()
     }
     
